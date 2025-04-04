@@ -56,10 +56,10 @@ export default function Header({ className }: HeaderProps) {
   return (
     <header className={cn(
       "fixed top-0 w-full z-50 transition-all duration-300",
-      isScrolled ? "bg-background/95 backdrop-blur-md border-b py-3" : "py-6",
+      isScrolled ? "bg-background/95 backdrop-blur-md border-b" : "",
       className
     )}>
-      <div className="container mx-auto flex items-center justify-between px-4 md:px-6">
+      <div className="container mx-auto flex items-center justify-between px-4 md:px-6 h-16">
         <a href="#home" className="text-2xl font-serif font-medium">
           Emma Richardson
         </a>
