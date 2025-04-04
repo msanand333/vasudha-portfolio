@@ -1,145 +1,148 @@
 
-import { useState } from 'react';
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { useState } from "react";
+import { AtSign, Instagram, Send, Twitter, Youtube } from "lucide-react";
+import { useToast } from "@/components/ui/use-toast";
 
 interface ContactSectionProps {
   className?: string;
 }
 
 export default function ContactSection({ className }: ContactSectionProps) {
-  const { toast } = useToast();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+  const { toast } = useToast();
+  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
-
+  
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
     // Simulate form submission
     setTimeout(() => {
-      toast({
-        title: "Message Sent",
-        description: "Thank you for your message. I'll get back to you soon!",
-      });
-      
-      setFormData({
-        name: '',
-        email: '',
-        message: ''
-      });
       setIsSubmitting(false);
+      toast({
+        title: "Message sent!",
+        description: "Thank you for your message. I'll get back to you soon.",
+        duration: 5000
+      });
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+      });
     }, 1500);
   };
-
+  
   return (
     <section 
       id="contact" 
       className={cn(
-        "section-padding bg-background",
+        "section-padding py-24 bg-secondary",
         className
       )}
     >
-      <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl text-center mb-4 reveal">Get In Touch</h2>
-        <p className="text-center text-foreground/80 mb-16 max-w-2xl mx-auto reveal">
-          I'm always interested in new projects and collaborations. Feel free to reach out!
+      <div className="container mx-auto">
+        <h2 className="text-3xl md:text-4xl text-center mb-4 font-serif reveal">Get In Touch</h2>
+        <p className="text-center text-foreground/80 mb-12 max-w-2xl mx-auto reveal">
+          For casting inquiries, collaboration opportunities, or any other questions, please fill out the form below or reach out via social media.
         </p>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="bg-secondary rounded-lg p-8 reveal">
-            <h3 className="font-serif text-2xl mb-6">Contact Information</h3>
-            
-            <div className="space-y-6">
-              <div className="flex items-start">
-                <Mail className="w-5 h-5 mt-1 mr-4" />
-                <div>
-                  <h4 className="font-medium mb-1">Email</h4>
-                  <p className="text-foreground/80">hello@example.com</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <Phone className="w-5 h-5 mt-1 mr-4" />
-                <div>
-                  <h4 className="font-medium mb-1">Phone</h4>
-                  <p className="text-foreground/80">+1 (555) 123-4567</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <MapPin className="w-5 h-5 mt-1 mr-4" />
-                <div>
-                  <h4 className="font-medium mb-1">Location</h4>
-                  <p className="text-foreground/80">New York, NY</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
           <div className="reveal">
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <Label htmlFor="name">Name</Label>
-                <Input
-                  id="name"
+              <div className="space-y-4">
+                <Input 
                   name="name"
+                  placeholder="Your Name" 
                   value={formData.name}
                   onChange={handleChange}
                   required
                 />
-              </div>
-              
-              <div>
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
+                <Input 
                   name="email"
-                  type="email"
+                  type="email" 
+                  placeholder="Your Email" 
                   value={formData.email}
                   onChange={handleChange}
                   required
                 />
-              </div>
-              
-              <div>
-                <Label htmlFor="message">Message</Label>
-                <Textarea
-                  id="message"
+                <Input 
+                  name="subject"
+                  placeholder="Subject" 
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                />
+                <Textarea 
                   name="message"
-                  rows={5}
+                  placeholder="Your Message" 
+                  className="min-h-[150px]"
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="resize-none"
                 />
               </div>
               
-              <Button 
-                type="submit" 
-                className="w-full"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+              <Button type="submit" className="w-full" disabled={isSubmitting}>
+                {isSubmitting ? "Sending..." : "Send Message"}
+                <Send className="ml-2 h-4 w-4" />
               </Button>
             </form>
+          </div>
+          
+          <div className="flex flex-col space-y-6 justify-center reveal">
+            <div>
+              <h3 className="text-xl font-serif mb-4">Contact Details</h3>
+              <p className="flex items-center mb-3">
+                <AtSign className="mr-3 h-5 w-5" />
+                contact@emmarichardson.com
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-serif mb-4">Representation</h3>
+              <div className="space-y-2">
+                <p><strong>Talent Agency:</strong> Creative Artists Management</p>
+                <p><strong>Agent:</strong> Sarah Johnson</p>
+                <p><strong>Email:</strong> sarah@creativeartists.com</p>
+                <p><strong>Phone:</strong> (555) 123-4567</p>
+              </div>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-serif mb-4">Connect</h3>
+              <div className="flex space-x-4">
+                <Button variant="outline" size="icon" asChild>
+                  <a href="https://instagram.com/emmarichardson" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <Instagram className="h-5 w-5" />
+                  </a>
+                </Button>
+                <Button variant="outline" size="icon" asChild>
+                  <a href="https://twitter.com/emmarichardson" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                    <Twitter className="h-5 w-5" />
+                  </a>
+                </Button>
+                <Button variant="outline" size="icon" asChild>
+                  <a href="https://youtube.com/emmarichardson" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <Youtube className="h-5 w-5" />
+                  </a>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

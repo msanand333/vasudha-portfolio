@@ -1,5 +1,6 @@
 
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 interface AboutSectionProps {
   className?: string;
@@ -10,47 +11,50 @@ export default function AboutSection({ className }: AboutSectionProps) {
     <section 
       id="about" 
       className={cn(
-        "section-padding bg-background",
+        "section-padding py-24 bg-background",
         className
       )}
     >
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="aspect-square bg-muted rounded-md overflow-hidden reveal">
-            <img 
-              src="/placeholder.svg" 
-              alt="Portrait" 
-              className="w-full h-full object-cover"
-            />
+          <div className="reveal">
+            <div className="aspect-[3/4] bg-muted rounded-sm overflow-hidden">
+              <img 
+                src="/placeholder.svg" 
+                alt="Emma Richardson" 
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
           
           <div className="reveal">
-            <h2 className="text-3xl md:text-4xl mb-6">About Me</h2>
-            <p className="text-foreground/80 mb-4">
-              I am a passionate creative professional with expertise in design, photography, and digital media. With years of experience in the industry, I've developed a keen eye for detail and a unique perspective that informs all of my work.
+            <h2 className="text-3xl md:text-4xl mb-6 font-serif">About Me</h2>
+            <p className="text-foreground/80 mb-6">
+              I'm Emma Richardson, an actor and director with a passion for authentic storytelling. With experience in films, web series, and short films, I bring characters to life with depth and nuance.
+            </p>
+            <p className="text-foreground/80 mb-6">
+              My journey began in theater, which gave me a strong foundation in the craft of acting. I've since transitioned to screen work, where I've had the opportunity to work with talented filmmakers on projects spanning various genres.
             </p>
             <p className="text-foreground/80 mb-8">
-              My approach combines technical precision with artistic vision, allowing me to create compelling visual narratives that resonate with audiences. I believe in the power of simplicity and letting the work speak for itself.
+              When I'm not in front of the camera, I'm often behind it, directing short films that explore human connections and personal journeys. My work has been featured at several film festivals and can be found on my YouTube channel.
             </p>
             
-            <div className="grid grid-cols-2 gap-6">
-              <div>
-                <h3 className="font-serif text-xl mb-3">Skills</h3>
-                <ul className="space-y-2 text-foreground/80">
-                  <li>Photography</li>
-                  <li>Graphic Design</li>
-                  <li>Web Development</li>
-                  <li>Visual Storytelling</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-serif text-xl mb-3">Education</h3>
-                <ul className="space-y-2 text-foreground/80">
-                  <li>MFA in Design</li>
-                  <li>BA in Fine Arts</li>
-                  <li>Certificate in Digital Media</li>
-                </ul>
-              </div>
+            <div className="flex flex-wrap gap-4">
+              <Button
+                variant="outline"
+                className="border-primary/20"
+                asChild
+              >
+                <a href="#contact">Contact Me</a>
+              </Button>
+              
+              <Button 
+                variant="ghost"
+                className="border-primary/20"
+                asChild
+              >
+                <a href="#resume">View Resume</a>
+              </Button>
             </div>
           </div>
         </div>

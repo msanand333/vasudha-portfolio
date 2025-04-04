@@ -7,7 +7,10 @@ import { Sun, Moon, Menu, X } from "lucide-react";
 export const navLinks = [
   { title: 'Home', href: '#home' },
   { title: 'About', href: '#about' },
-  { title: 'Projects', href: '#projects' },
+  { title: 'Showreel', href: '#showreel' },
+  { title: 'Credits', href: '#credits' },
+  { title: 'Directed', href: '#directed-works' },
+  { title: 'Gallery', href: '#gallery' },
   { title: 'Contact', href: '#contact' },
 ];
 
@@ -58,11 +61,11 @@ export default function Header({ className }: HeaderProps) {
     )}>
       <div className="container mx-auto flex items-center justify-between px-4 md:px-6">
         <a href="#home" className="text-2xl font-serif font-medium">
-          Portfolio
+          Emma Richardson
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-6">
           {navLinks.map((link) => (
             <a
               key={link.href}
