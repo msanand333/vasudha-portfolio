@@ -55,8 +55,8 @@ export default function Header({ className }: HeaderProps) {
 
   return (
     <header className={cn(
-      "fixed top-0 w-full z-50 transition-all duration-300",
-      isScrolled ? "bg-background/95 backdrop-blur-md border-b" : "",
+      "fixed top-0 w-full z-50 transition-all duration-300 backdrop-blur-md",
+      isScrolled ? "bg-black/90 border-b" : "bg-transparent",
       className
     )}>
       <div className="container mx-auto flex items-center justify-between px-4 md:px-6 h-16">
@@ -111,7 +111,7 @@ export default function Header({ className }: HeaderProps) {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b animate-fade-in">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-black/90 backdrop-blur-md border-b animate-fade-in">
           <div className="container mx-auto py-4 px-6 flex flex-col space-y-4">
             {navLinks.map((link) => (
               <a
