@@ -108,7 +108,7 @@ export default function ProjectsSection({ className }: ProjectsViewProps) {
     <section 
       id="projects" 
       className={cn(
-        "section-padding bg-secondary",
+        "section-padding bg-secondary py-20",
         className
       )}
     >
