@@ -27,20 +27,24 @@ export default function HeroSection({ className }: HeroSectionProps) {
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Button 
-            href="#projects" 
+            asChild
             className="animate-fade-in"
             style={{ animationDelay: '0.3s' }}
           >
-            View Portfolio <ArrowRight className="ml-2 h-4 w-4" />
+            <a href="#projects">
+              View Portfolio <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
           </Button>
           
           <Button 
             variant="outline"
-            href="#showreel" 
+            asChild
             className="animate-fade-in"
             style={{ animationDelay: '0.4s' }}
           >
-            <Play className="mr-2 h-4 w-4" /> Showreel
+            <a href="#showreel">
+              <Play className="mr-2 h-4 w-4" /> Showreel
+            </a>
           </Button>
         </div>
       </div>
