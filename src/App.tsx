@@ -8,11 +8,16 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Determine if we're running in GitHub Pages environment
+const baseName = import.meta.env.MODE === 'production' && window.location.hostname.includes('github.io') 
+  ? '/vasudha-portfolio' 
+  : '/';
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <Toaster />
     <Sonner />
-    <BrowserRouter>
+    <BrowserRouter basename={baseName}>
       <Routes>
         <Route path="/" element={<Index />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
