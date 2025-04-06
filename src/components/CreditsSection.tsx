@@ -1,3 +1,4 @@
+
 import { cn } from "@/lib/utils";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useState } from "react";
@@ -172,56 +173,56 @@ export default function CreditsSection({ className }: CreditsSectionProps) {
             </div>
           </div>
         ) : (
-          <Tabs defaultValue="all" className="w-full max-w-4xl mx-auto reveal">
-            <TabsList className="grid grid-cols-5 mb-8">
-              <TabsTrigger value="all">All</TabsTrigger>
-              <TabsTrigger value="film">Film</TabsTrigger>
-              <TabsTrigger value="series">TV/Web Series</TabsTrigger>
-              <TabsTrigger value="short">Short Film</TabsTrigger>
-              <TabsTrigger value="theater">Theater</TabsTrigger>
-            </TabsList>
+          <div className="w-full max-w-4xl mx-auto reveal">
+            <div className="flex justify-center mb-6 md:mb-8 overflow-x-auto py-2">
+              <div className="inline-flex rounded-md bg-muted p-1">
+                {categories.map((category) => (
+                  <button
+                    key={category}
+                    className={`px-3 py-1.5 text-sm font-medium rounded-sm ${
+                      activeTab === category ? "bg-background shadow" : ""
+                    } whitespace-nowrap`}
+                    onClick={() => setActiveTab(category)}
+                  >
+                    {formatTabName(category)}
+                  </button>
+                ))}
+              </div>
+            </div>
 
-            {categories.map((category) => (
-              <TabsContent
-                key={category}
-                value={category}
-                className="space-y-6"
-              >
-                <div className="grid grid-cols-1 gap-4">
-                  {credits
-                    .filter(
-                      (credit) => category === "all" || credit.type === category
-                    )
-                    .map((credit, index) => (
-                      <div
-                        key={index}
-                        className="border-b border-border py-4 grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-4"
-                      >
-                        <div>
-                          <h3 className="font-medium text-lg">
-                            {credit.title}
-                          </h3>
-                          <p className="text-muted-foreground">{credit.role}</p>
-                        </div>
-                        <div>
-                          {credit.director && (
-                            <p className="text-sm">Dir: {credit.director}</p>
-                          )}
-                          {credit.production && (
-                            <p className="text-sm text-muted-foreground">
-                              {credit.production}
-                            </p>
-                          )}
-                        </div>
-                        <div className="text-right">
-                          <span className="text-sm">{credit.year}</span>
-                        </div>
+            <div className="space-y-6">
+              <div className="grid grid-cols-1 gap-4">
+                {credits
+                  .filter(
+                    (credit) => activeTab === "all" || credit.type === activeTab
+                  )
+                  .map((credit, index) => (
+                    <div
+                      key={index}
+                      className="border-b border-border py-4 grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-4"
+                    >
+                      <div>
+                        <h3 className="font-medium text-lg">{credit.title}</h3>
+                        <p className="text-muted-foreground">{credit.role}</p>
                       </div>
-                    ))}
-                </div>
-              </TabsContent>
-            ))}
-          </Tabs>
+                      <div>
+                        {credit.director && (
+                          <p className="text-sm">Dir: {credit.director}</p>
+                        )}
+                        {credit.production && (
+                          <p className="text-sm text-muted-foreground">
+                            {credit.production}
+                          </p>
+                        )}
+                      </div>
+                      <div className="text-right">
+                        <span className="text-sm">{credit.year}</span>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          </div>
         )}
       </div>
     </section>
