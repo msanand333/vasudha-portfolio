@@ -22,7 +22,7 @@ export default function Header({ className }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useState<'light' | 'dark'>(
-    localStorage.getItem('theme') as 'light' | 'dark' || 'light'
+    localStorage.getItem('theme') as 'light' | 'dark' || 'dark'
   );
 
   useEffect(() => {
@@ -61,7 +61,7 @@ export default function Header({ className }: HeaderProps) {
     )}>
       <div className="container mx-auto flex items-center justify-between px-4 md:px-6 h-16">
         <a href="#home" className="text-2xl font-serif font-medium">
-          Emma Richardson
+          Vasudha Krishnamoorthy
         </a>
 
         {/* Desktop Navigation */}
@@ -70,7 +70,10 @@ export default function Header({ className }: HeaderProps) {
             <a
               key={link.href}
               href={link.href}
-              className="font-sans text-sm tracking-wide hover:text-foreground/70 transition-colors"
+              className={cn(
+                "font-sans text-sm tracking-wide transition-colors",
+                isScrolled ? "text-white hover:text-white/70" : "hover:text-foreground/70"
+              )}
             >
               {link.title}
             </a>

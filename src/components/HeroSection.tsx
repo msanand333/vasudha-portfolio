@@ -20,7 +20,7 @@ export default function HeroSection({ className }: HeroSectionProps) {
       
       <div className="relative z-10 text-center px-4 max-w-3xl mx-auto reveal">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium mb-6 animate-slide-down">
-          Emma Richardson
+          Vasudha Krishnamoorthy
         </h1>
         <p className="text-lg md:text-xl text-foreground/80 mb-8 animate-slide-up">
           Actor • Director • Storyteller

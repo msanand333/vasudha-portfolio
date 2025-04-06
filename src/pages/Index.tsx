@@ -13,14 +13,13 @@ import Footer from '@/components/Footer';
 import ScrollReveal from '@/components/ScrollReveal';
 
 const Index = () => {
-  // Check for saved theme preference or system preference on initial load
+  // Set dark theme as default
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     
     if (!savedTheme) {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      document.documentElement.classList.toggle('dark', prefersDark);
-      localStorage.setItem('theme', prefersDark ? 'dark' : 'light');
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
     } else {
       document.documentElement.classList.toggle('dark', savedTheme === 'dark');
     }

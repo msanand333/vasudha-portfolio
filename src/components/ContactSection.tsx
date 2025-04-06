@@ -30,6 +30,11 @@ export default function ContactSection({ className }: ContactSectionProps) {
     e.preventDefault();
     setIsSubmitting(true);
     
+    // Here you would implement actual email sending functionality
+    // For now, we'll simulate the form submission
+    console.log("Sending message to: vasudhakrishnamoorthy@gmail.com");
+    console.log("Form data:", formData);
+    
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
@@ -51,17 +56,17 @@ export default function ContactSection({ className }: ContactSectionProps) {
     <section 
       id="contact" 
       className={cn(
-        "section-padding py-24 bg-secondary",
+        "section-padding py-16 md:py-24 bg-secondary",
         className
       )}
     >
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl text-center mb-4 font-serif reveal">Get In Touch</h2>
-        <p className="text-center text-foreground/80 mb-12 max-w-2xl mx-auto reveal">
+        <p className="text-center text-foreground/80 mb-8 md:mb-12 max-w-2xl mx-auto px-4 reveal">
           For casting inquiries, collaboration opportunities, or any other questions, please fill out the form below or reach out via social media.
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto px-4">
           <div className="reveal">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-4">
@@ -109,7 +114,7 @@ export default function ContactSection({ className }: ContactSectionProps) {
               <h3 className="text-xl font-serif mb-4">Contact Details</h3>
               <p className="flex items-center mb-3">
                 <AtSign className="mr-3 h-5 w-5" />
-                contact@emmarichardson.com
+                vasudhakrishnamoorthy@gmail.com
               </p>
             </div>
             
@@ -127,17 +132,17 @@ export default function ContactSection({ className }: ContactSectionProps) {
               <h3 className="text-xl font-serif mb-4">Connect</h3>
               <div className="flex space-x-4">
                 <Button variant="outline" size="icon" asChild>
-                  <a href="https://instagram.com/emmarichardson" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <a href="https://instagram.com/vasudhakrishnamoorthy" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                     <Instagram className="h-5 w-5" />
                   </a>
                 </Button>
                 <Button variant="outline" size="icon" asChild>
-                  <a href="https://twitter.com/emmarichardson" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                  <a href="https://twitter.com/vasudhakrishna" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                     <Twitter className="h-5 w-5" />
                   </a>
                 </Button>
                 <Button variant="outline" size="icon" asChild>
-                  <a href="https://youtube.com/emmarichardson" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                  <a href="https://youtube.com/vasudhakrishna" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                     <Youtube className="h-5 w-5" />
                   </a>
                 </Button>

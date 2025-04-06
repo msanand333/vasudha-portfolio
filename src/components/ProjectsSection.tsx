@@ -108,17 +108,17 @@ export default function ProjectsSection({ className }: ProjectsViewProps) {
     <section 
       id="projects" 
       className={cn(
-        "section-padding bg-secondary py-20",
+        "section-padding bg-secondary py-16 md:py-20",
         className
       )}
     >
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl mb-4 text-center reveal">Selected Projects</h2>
-        <p className="text-center text-foreground/80 mb-12 max-w-2xl mx-auto reveal">
+        <p className="text-center text-foreground/80 mb-8 md:mb-12 max-w-2xl mx-auto px-4 reveal">
           A curated collection of my most significant work across various disciplines and media.
         </p>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 px-4">
           {projects.map((project) => (
             <ProjectCard 
               key={project.id} 
@@ -130,7 +130,7 @@ export default function ProjectsSection({ className }: ProjectsViewProps) {
       </div>
       
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="max-w-4xl p-0 overflow-hidden bg-background">
+        <DialogContent className="max-w-4xl p-0 overflow-hidden bg-background sm:rounded-lg">
           {selectedProject && (
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="aspect-square bg-muted">
@@ -140,8 +140,8 @@ export default function ProjectsSection({ className }: ProjectsViewProps) {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="p-6 flex flex-col">
-                <h2 className="text-2xl font-serif mb-2">{selectedProject.title}</h2>
+              <div className="p-4 md:p-6 flex flex-col">
+                <h2 className="text-xl md:text-2xl font-serif mb-2">{selectedProject.title}</h2>
                 <p className="text-sm text-muted-foreground mb-4">
                   {selectedProject.category} | {selectedProject.year}
                 </p>
