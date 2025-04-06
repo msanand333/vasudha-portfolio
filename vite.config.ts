@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base: mode === 'production' ? '/vasudha-portfolio/' : '/',
+  base: '/vasudha-portfolio/', // Setting base path explicitly for all environments to ensure consistency
   plugins: [
     react(),
     mode === 'development' &&
