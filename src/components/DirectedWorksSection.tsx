@@ -1,4 +1,3 @@
-
 import { cn } from "@/lib/utils";
 import {
   Carousel,
@@ -66,7 +65,7 @@ export default function DirectedWorksSection({
       className={cn("section-padding py-24 bg-secondary", className)}
     >
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row md:justify-between items-start md:items-end mb-12 gap-4">
+        <div className="flex flex-col items-center mb-12 gap-4 text-center ">
           <div className="reveal">
             <h2 className="text-3xl md:text-4xl mb-2 font-serif">
               Directed Works
