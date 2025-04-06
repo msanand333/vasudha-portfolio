@@ -1,3 +1,4 @@
+
 import { cn } from "@/lib/utils";
 import {
   Carousel,
@@ -88,7 +89,7 @@ export default function DirectedWorksSection({
           </Button>
         </div>
 
-        <div className="reveal">
+        <div className="reveal relative">
           <Carousel className="w-full">
             <CarouselContent className="">
               {directedWorks.map((work, index) => (
@@ -133,8 +134,12 @@ export default function DirectedWorksSection({
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-2" />
-            <CarouselNext className="right-2" />
+            <div className="absolute -left-10 sm:-left-14 top-1/2 -translate-y-1/2">
+              <CarouselPrevious className="relative left-0" />
+            </div>
+            <div className="absolute -right-10 sm:-right-14 top-1/2 -translate-y-1/2">
+              <CarouselNext className="relative right-0" />
+            </div>
           </Carousel>
         </div>
       </div>
