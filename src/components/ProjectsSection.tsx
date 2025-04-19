@@ -14,55 +14,54 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Monochrome Series",
-    category: "Photography",
-    image: "/placeholder.svg",
+    title: "The Return Arrow",
+    category: "Feature Film",
+    image: "/assets/images/projects/the-return-arrow.jpeg",
     description:
-      "A collection of black and white photographs exploring the interplay of light and shadow in urban environments.",
-    year: "2024",
+      "The Return Arrow traces the journey of Radha, a gifted archer grappling with the weight of her past and the pressure of an uncertain future. As she steps back onto the field, guided by an unexpected ally, old wounds resurface and new questions emerge. Set against the backdrop of quiet rivalries and unspoken emotions, the film explores love, loss, and the strength it takes to aim again. Will she reclaim her shot, or let it slip away?",
+    year: "Upcoming",
   },
   {
     id: 2,
-    title: "Minimalist Design",
-    category: "Graphic Design",
-    image: "/placeholder.svg",
+    title: "Echoes of the heart",
+    category: "Short Film",
+    image: "/assets/images/projects/echoes-of-the-heart.jpeg",
     description:
-      "A series of minimalist designs focusing on essential elements and negative space.",
-    year: "2023",
+      "The script revolves around a poignant narrative of love, loss, remembrance, and the ethereal connection between two individuals. It explores the depth of their relationship through a series of intimate moments, both joyful and sorrowful, capturing the essence of their bond that transcends physical presence.",
+    year: "2025",
   },
   {
     id: 3,
-    title: "Abstract Forms",
-    category: "Art",
-    image: "/placeholder.svg",
-    description:
-      "Exploration of abstract forms and textures through various mediums.",
-    year: "2023",
+    title: "Finding Indigo",
+    category: "Pilot Film",
+    image: "/assets/images/projects/finding-indigo.jpeg",
+    description: `"Finding Indigo" immerses audiences in a spellbinding world where fantasy, drama, and mystique collide. Set against the backdrop of the nostalgic 2000s in a quaint Indiana town, this television series unfolds a cinematic journey of epic proportions.`,
+    year: "2024",
   },
   {
     id: 4,
-    title: "Architectural Lines",
-    category: "Photography",
-    image: "/placeholder.svg",
+    title: "Unnara Vaithai",
+    category: "Dance Cover",
+    image: "/assets/images/projects/unnara-vaithai.jpeg",
     description:
-      "Documenting architectural details with an emphasis on lines, patterns, and geometry.",
-    year: "2022",
+      "Experience the emotional journey of a newlywed woman as she joyfully embarks on the adventure of married life, surrounded by the warmth of her husband and in-laws. However, her world takes a painful turn when societal pressures and family expectations unfairly place the blame on her for not conceiving quickly. Watch as she battles the misery within the confines of her home, ultimately finding the strength to break free and breathe in the refreshing air of newfound freedom. This poignant story explores the resilience of the human spirit and the pursuit of happiness against societal norms.",
+    year: "2024",
   },
   {
     id: 5,
-    title: "Portrait Collection",
-    category: "Photography",
-    image: "/placeholder.svg",
-    description:
-      "A series of intimate portrait photographs capturing emotional moments.",
-    year: "2022",
+    title: "Love We Had",
+    category: "Album Song",
+    image: "/assets/images/projects/love-we-had.jpeg",
+    description: "A song by Anza",
+    year: "2023",
   },
   {
     id: 6,
-    title: "Brand Identity",
-    category: "Design",
-    image: "/placeholder.svg",
-    description: "Complete brand identity design for a boutique fashion label.",
+    title: "Sister",
+    category: "Feature Film",
+    image: "/assets/images/projects/sister.jpeg",
+    description:
+      "Winner of the Award for Best Horror Feature Film & Best Actress at the 2021 FICIMAD Film Festival in Madrid, Spain.",
     year: "2021",
   },
 ];
@@ -83,10 +82,10 @@ function ProjectCard({ project, onClick }: ProjectCardProps) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
           <div>
-            <h3 className="font-serif text-lg text-primary-foreground">
+            <h3 className="font-serif text-lg text-primary-background">
               {project.title}
             </h3>
-            <p className="text-sm text-primary-foreground/80">
+            <p className="text-sm text-primary-background/80">
               {project.category}
             </p>
           </div>

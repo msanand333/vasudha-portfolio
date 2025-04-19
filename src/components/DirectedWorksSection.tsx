@@ -19,12 +19,12 @@ interface DirectedWork {
 
 const directedWorks: DirectedWork[] = [
   {
-    title: "Echoes of Silence",
+    title: "Echoes of the Heart",
     description:
-      "A short film exploring the emotional journey of a woman who lost her voice.",
+      "The script revolves around a poignant narrative of love, loss, remembrance, and the ethereal connection between two individuals. It explores the depth of their relationship through a series of intimate moments, both joyful and sorrowful, capturing the essence of their bond that transcends physical presence.",
     thumbnail: "/placeholder.svg",
     youtubeLink: "https://youtube.com/watch?v=example1",
-    year: "2023",
+    year: "2025",
   },
   {
     title: "The Forgotten Path",
@@ -78,7 +78,7 @@ export default function DirectedWorksSection({
 
           <Button variant="outline" className="reveal" asChild>
             <a
-              href="https://youtube.com/@example"
+              href="https://www.youtube.com/@vkayproductions"
               target="_blank"
               rel="noopener noreferrer"
             >

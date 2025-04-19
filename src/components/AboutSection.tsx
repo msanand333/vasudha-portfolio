@@ -16,9 +16,9 @@ export default function AboutSection({ className }: AboutSectionProps) {
           <div className="reveal">
             <div className="aspect-[3/4] bg-muted rounded-sm overflow-hidden">
               <img
-                src="/placeholder.svg"
+                src="/assets/images/portraits/headshot-1.jpeg"
                 alt="Vasudha Krishnamoorthy"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover bg-cover"
               />
             </div>
           </div>
@@ -26,21 +26,29 @@ export default function AboutSection({ className }: AboutSectionProps) {
           <div className="reveal">
             <h2 className="text-3xl md:text-4xl mb-6 font-serif">About Me</h2>
             <p className="text-foreground/80 mb-6">
-              I'm Vasudha Krishnamoorthy, an actor and director with a passion
-              for authentic storytelling. With experience in films, web series,
-              and short films, I bring characters to life with depth and nuance.
+              Hi, I’m vasudha krishnamoorthy—an actor drawn to stories that
+              carry emotional depth, cultural authenticity, and quiet power. My
+              work spans feature films, indie projects, short films, and web
+              series across Tamil, Telugu, and English—each role offering a new
+              lens into the human experience.
             </p>
             <p className="text-foreground/80 mb-6">
-              My journey began in theater, which gave me a strong foundation in
-              the craft of acting. I've since transitioned to screen work, where
-              I've had the opportunity to work with talented filmmakers on
-              projects spanning various genres.
+              I’m passionate about bringing grounded, emotionally honest
+              characters to life, especially in narratives that reflect the
+              complexities of everyday life. With a background in
+              writing/directing/project management, I approach each project with
+              intention, professionalism, and a collaborative spirit.
+            </p>
+            <p className="text-foreground/80 mb-6">
+              Beyond acting, I have an insatiable appetite for travel—it fuels
+              my curiosity and shapes the way I see the world. I’m also
+              continuously learning, currently training in Taekwondo (Black
+              belt) and continue to practice Indian classical dance form
+              Bharatanatyam —both of which have deepened my connection to body,
+              discipline, and expression.
             </p>
             <p className="text-foreground/80 mb-8">
-              When I'm not in front of the camera, I'm often behind it,
-              directing short films that explore human connections and personal
-              journeys. My work has been featured at several film festivals and
-              can be found on my YouTube channel.
+              Let’s create something meaningful together.
             </p>
 
             <div className="flex flex-wrap gap-4">

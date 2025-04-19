@@ -1,4 +1,3 @@
-
 import { cn } from "@/lib/utils";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useState } from "react";
@@ -9,66 +8,92 @@ import { useIsMobile } from "@/hooks/use-mobile";
 interface Credit {
   title: string;
   role: string;
+  character?: string;
   director?: string;
   production?: string;
   year: string;
-  type: "film" | "series" | "short" | "theater";
+  type: "film" | "series" | "short";
+  streaming?: string;
 }
 
 const credits: Credit[] = [
   {
-    title: "The Silent Room",
-    role: "Detective Sarah Miller",
-    director: "Michael Chen",
-    production: "Paramount Pictures",
+    title: "The Return Arrow",
+    role: "Lead Role",
+    character: "Archery Player Radha",
+    director: "Vasudha Krishnamoorthy",
+    production: "Vkay Productions",
+    year: "Upcoming",
+    type: "film",
+  },
+  {
+    title: "Project C - Chapter 2",
+    role: "Lead Role",
+    character: "Housemaid Panchavarnam",
+    director: "Vino",
+    production: "Sharkfin Studios",
     year: "2023",
     type: "film",
+    streaming: "Raj Digital Plus",
   },
   {
-    title: "Echoes of Tomorrow",
-    role: "Dr. Emily Nakamura",
-    director: "Sophia Williams",
-    production: "Netflix",
-    year: "2022",
-    type: "series",
-  },
-  {
-    title: "Fragments",
-    role: "Claire",
-    director: "Robert Davis",
-    year: "2022",
-    type: "short",
-  },
-  {
-    title: "The Last Letter",
-    role: "Anna Thompson",
-    director: "James Wilson",
-    production: "Amazon Studios",
-    year: "2021",
+    title: "Aura",
+    role: "Lead Role",
+    character: "Youtube Channel CEO ",
+    director: "S.Sriram",
+    production: "Thangam Cinemas",
+    year: "Upcoming",
     type: "film",
   },
   {
-    title: "Midnight Chronicles",
-    role: "Detective Jane Porter",
-    director: "Elena Rodriguez",
-    production: "HBO",
+    title: "Sister",
+    role: "Lead Role ",
+    character: "Sister Jowi",
+    director: "Collin Denhart",
+    production: "Knightly Pictures",
     year: "2021",
-    type: "series",
+    type: "film",
+    streaming: "In Film Festivals",
   },
   {
-    title: "Whispers in the Dark",
-    role: "Grace",
-    director: "Thomas Brown",
-    year: "2020",
-    type: "short",
-  },
-  {
-    title: "A Streetcar Named Desire",
-    role: "Stella Kowalski",
-    director: "Martha Johnson",
-    production: "City Theater Company",
+    title: "Auto Shankar",
+    role: "Supporting Lead",
+    character: "Sex Worker Lalitha",
+    director: "Ranga",
+    production: "Trident Arts",
     year: "2019",
-    type: "theater",
+    type: "series",
+    streaming: "Zee5",
+  },
+  {
+    title: "Iru Dhuruvam",
+    role: "Supporting Actress",
+    character: "Nivedha",
+    director: "M.Kumaran",
+    production: "Applause Entertainment",
+    year: "2019",
+    type: "series",
+    streaming: "SonyLIV",
+  },
+  {
+    title: "Real Autism",
+    role: "Supporting Actress",
+    character: "Meera",
+    director: "Christopher",
+    year: "Upcoming",
+    type: "short",
+    production: "Visionary Studios",
+    streaming: "YouTube",
+  },
+  {
+    title: "Finding Indigo",
+    role: "Lead Role",
+    character: "Maya - Mom",
+    production: "Zaahi Studios",
+    director: "Michael",
+    year: "2024",
+    type: "short",
+    streaming: "YouTube",
   },
 ];
 
@@ -77,7 +102,7 @@ interface CreditsSectionProps {
 }
 
 export default function CreditsSection({ className }: CreditsSectionProps) {
-  const categories = ["all", "film", "series", "short", "theater"];
+  const categories = ["all", "film", "series", "short"];
   const [activeTab, setActiveTab] = useState("all");
   const isMobile = useIsMobile();
 
@@ -153,10 +178,18 @@ export default function CreditsSection({ className }: CreditsSectionProps) {
                       <div>
                         <h3 className="font-medium text-lg">{credit.title}</h3>
                         <p className="text-muted-foreground">{credit.role}</p>
+                        <p className="text-sm text-muted-foreground">
+                          {credit.character}
+                        </p>
                       </div>
                       <div>
                         {credit.director && (
                           <p className="text-sm">Dir: {credit.director}</p>
+                        )}
+                        {credit.streaming && (
+                          <p className="text-sm text-muted-foreground">
+                            Streaming in - <i>{credit.streaming}</i>
+                          </p>
                         )}
                         {credit.production && (
                           <p className="text-sm text-muted-foreground">
@@ -204,10 +237,18 @@ export default function CreditsSection({ className }: CreditsSectionProps) {
                       <div>
                         <h3 className="font-medium text-lg">{credit.title}</h3>
                         <p className="text-muted-foreground">{credit.role}</p>
+                        <p className="text-sm text-muted-foreground">
+                          {credit.character}
+                        </p>
                       </div>
                       <div>
                         {credit.director && (
                           <p className="text-sm">Dir: {credit.director}</p>
+                        )}
+                        {credit.streaming && (
+                          <p className="text-sm text-muted-foreground">
+                            Streaming in - <i>{credit.streaming}</i>
+                          </p>
                         )}
                         {credit.production && (
                           <p className="text-sm text-muted-foreground">
