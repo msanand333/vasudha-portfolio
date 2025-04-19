@@ -57,7 +57,7 @@ export default function AboutSection({ className }: AboutSectionProps) {
               </Button>
 
               <Button variant="ghost" className="border-primary/20" asChild>
-                <a href="#showreel">View Resume</a>
+                <a href="/showreel">View Resume</a>
               </Button>
             </div>
           </div>
