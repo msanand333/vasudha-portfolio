@@ -1,22 +1,28 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
-import Index from "./pages/Index";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Showreel from "./pages/Showreel";
+import Directed from "./pages/Directed";
+import Gallery from "./pages/Gallery";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-// Use HashRouter for GitHub Pages to handle routing properly
-// This works better with GitHub Pages than trying to use BrowserRouter with a basename
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <Toaster />
     <Sonner />
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Index />} />
-        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+        <Route path="/" element={<Home />} />
+        <Route path="/showreel" element={<Showreel />} />
+        <Route path="/directed" element={<Directed />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

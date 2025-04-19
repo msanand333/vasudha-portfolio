@@ -4,13 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Sun, Moon, Menu, X } from "lucide-react";
 
 export const navLinks = [
-  { title: "Home", href: "#home" },
-  { title: "About", href: "#about" },
-  { title: "Showreel", href: "#showreel" },
-  { title: "Credits", href: "#credits" },
-  { title: "Directed", href: "#directed-works" },
-  { title: "Gallery", href: "#gallery" },
-  { title: "Contact", href: "#contact" },
+  { title: "Home", href: "/" },
+  { title: "About", href: "/#about" },
+  { title: "Credits", href: "/#credits" },
+  { title: "Awards", href: "/#awards" },
+  { title: "Showreel", href: "/showreel" },
+  { title: "Directed", href: "/directed" },
+  { title: "Gallery", href: "/gallery" },
+  { title: "Contact", href: "/contact" },
 ];
 
 interface HeaderProps {
