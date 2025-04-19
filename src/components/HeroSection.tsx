@@ -1,8 +1,6 @@
-
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-import { Link } from "react-router-dom";
 
 interface HeroSectionProps {
   className?: string;
@@ -32,9 +30,9 @@ export default function HeroSection({ className }: HeroSectionProps) {
             className="animate-fade-in"
             style={{ animationDelay: "0.3s" }}
           >
-            <Link to="/projects">
+            <a href="#projects">
               View Portfolio <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+            </a>
           </Button>
 
           <Button
@@ -43,9 +41,9 @@ export default function HeroSection({ className }: HeroSectionProps) {
             className="animate-fade-in"
             style={{ animationDelay: "0.4s" }}
           >
-            <Link to="/showreel">
+            <a href="#showreel">
               <Play className="mr-2 h-4 w-4" /> Showreel
-            </Link>
+            </a>
           </Button>
         </div>
       </div>

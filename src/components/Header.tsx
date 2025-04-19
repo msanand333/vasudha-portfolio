@@ -1,19 +1,16 @@
-
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Sun, Moon, Menu, X } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
 
 export const navLinks = [
-  { title: "Home", href: "/" },
-  { title: "About", href: "/about" },
-  { title: "Projects", href: "/projects" },
-  { title: "Showreel", href: "/showreel" },
-  { title: "Credits", href: "/credits" },
-  { title: "Directed", href: "/directed-works" },
-  { title: "Gallery", href: "/gallery" },
-  { title: "Contact", href: "/contact" },
+  { title: "Home", href: "#home" },
+  { title: "About", href: "#about" },
+  { title: "Showreel", href: "#showreel" },
+  { title: "Credits", href: "#credits" },
+  { title: "Directed", href: "#directed-works" },
+  { title: "Gallery", href: "#gallery" },
+  { title: "Contact", href: "#contact" },
 ];
 
 interface HeaderProps {
@@ -26,9 +23,9 @@ export default function Header({ className }: HeaderProps) {
   const [theme, setTheme] = useState<"light" | "dark">(
     (localStorage.getItem("theme") as "light" | "dark") || "dark"
   );
-  const location = useLocation();
 
   useEffect(() => {
+    console.log("the classname is ", className);
     const handleScroll = () => {
       if (window.scrollY > 64) {
         setIsScrolled(true);
@@ -65,8 +62,8 @@ export default function Header({ className }: HeaderProps) {
       )}
     >
       <div className="container mx-auto flex items-center justify-between px-4 md:px-6 h-16">
-        <Link
-          to="/"
+        <a
+          href="#home"
           className={cn(
             "text-xl font-serif font-medium lg:text-2xl",
             isScrolled
@@ -75,24 +72,23 @@ export default function Header({ className }: HeaderProps) {
           )}
         >
           Vasudha Krishnamoorthy
-        </Link>
+        </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-6">
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.href}
-              to={link.href}
+              href={link.href}
               className={cn(
                 "font-sans text-sm tracking-wide transition-colors",
                 isScrolled
                   ? "text-white hover:text-white/70"
-                  : "hover:text-foreground/70",
-                location.pathname === link.href ? "font-medium border-b border-current" : ""
+                  : "hover:text-foreground/70"
               )}
             >
               {link.title}
-            </Link>
+            </a>
           ))}
           <Button
             variant="ghost"
@@ -180,17 +176,14 @@ export default function Header({ className }: HeaderProps) {
         >
           <div className="container mx-auto py-4 px-6 flex flex-col space-y-4 text-center">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.href}
-                to={link.href}
-                className={cn(
-                  "py-2 font-sans text-sm hover:underline underline-offset-4 transition-colors",
-                  location.pathname === link.href ? "font-medium underline" : ""
-                )}
+                href={link.href}
+                className="py-2 font-sans text-sm hover:underline underline-offset-4 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.title}
-              </Link>
+              </a>
             ))}
           </div>
         </div>
