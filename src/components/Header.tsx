@@ -5,9 +5,9 @@ import { Sun, Moon, Menu, X } from "lucide-react";
 
 export const navLinks = [
   { title: "Home", href: "/" },
-  { title: "About", href: "/#about" },
-  { title: "Credits", href: "/#credits" },
-  { title: "Awards", href: "/#awards" },
+  // { title: "About", href: "/#about" },
+  // { title: "Credits", href: "/#credits" },
+  // { title: "Awards", href: "/#awards" },
   { title: "Showreel", href: "/showreel" },
   { title: "Directed", href: "/directed" },
   { title: "Gallery", href: "/gallery" },
@@ -64,7 +64,7 @@ export default function Header({ className }: HeaderProps) {
     >
       <div className="container mx-auto flex items-center justify-between px-4 md:px-6 h-16">
         <a
-          href="#home"
+          href="/"
           className={cn(
             "text-xl font-serif font-medium lg:text-2xl",
             isScrolled

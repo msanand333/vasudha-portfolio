@@ -30,8 +30,8 @@ export default function HeroSection({ className }: HeroSectionProps) {
             className="animate-fade-in"
             style={{ animationDelay: "0.3s" }}
           >
-            <a href="#projects">
-              View Portfolio <ArrowRight className="ml-2 h-4 w-4" />
+            <a href="/gallery">
+              View Gallery <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </Button>
 
@@ -41,7 +41,7 @@ export default function HeroSection({ className }: HeroSectionProps) {
             className="animate-fade-in"
             style={{ animationDelay: "0.4s" }}
           >
-            <a href="#showreel">
+            <a href="/showreel">
               <Play className="mr-2 h-4 w-4" /> Showreel
             </a>
           </Button>

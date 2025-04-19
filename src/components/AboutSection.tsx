@@ -16,7 +16,7 @@ export default function AboutSection({ className }: AboutSectionProps) {
           <div className="reveal">
             <div className="aspect-[3/4] bg-muted rounded-sm overflow-hidden">
               <img
-                src="/assets/images/portraits/headshot-1.jpeg"
+                src="/assets/images/portraits/banner-3.JPG"
                 alt="Vasudha Krishnamoorthy"
                 className="w-full h-full object-cover bg-cover"
               />
@@ -53,7 +53,7 @@ export default function AboutSection({ className }: AboutSectionProps) {
 
             <div className="flex flex-wrap gap-4">
               <Button variant="outline" className="border-primary/20" asChild>
-                <a href="#contact">Contact Me</a>
+                <a href="/contact">Contact Me</a>
               </Button>
 
               <Button variant="ghost" className="border-primary/20" asChild>

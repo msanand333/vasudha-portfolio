@@ -1,4 +1,3 @@
-
 import { cn } from "@/lib/utils";
 import { Award, Trophy } from "lucide-react";
 
@@ -14,14 +13,14 @@ const awards: Award[] = [
     title: "Best Horror Feature Film",
     category: "Feature Film",
     event: "FICIMAD Film Festival, Madrid",
-    year: "2021"
+    year: "2021",
   },
   {
     title: "Best Actress",
     category: "Acting",
     event: "FICIMAD Film Festival, Madrid",
-    year: "2021"
-  }
+    year: "2021",
+  },
 ];
 
 interface AwardsSectionProps {
@@ -40,7 +39,7 @@ export default function AwardsSection({ className }: AwardsSectionProps) {
             <h2 className="text-3xl md:text-4xl mb-6 font-serif">
               Awards & Recognition
             </h2>
-            
+
             <div className="space-y-6">
               {awards.map((award, index) => (
                 <div
@@ -55,7 +54,9 @@ export default function AwardsSection({ className }: AwardsSectionProps) {
                     )}
                     <div>
                       <h3 className="font-medium mb-2">{award.title}</h3>
-                      <p className="text-sm text-muted-foreground">{award.category}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {award.category}
+                      </p>
                       <p className="text-sm text-muted-foreground mt-2">
                         {award.event}
                       </p>
