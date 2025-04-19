@@ -1,3 +1,5 @@
+
+import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 
@@ -13,9 +15,9 @@ export default function Footer({ className }: FooterProps) {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <a href="#home" className="text-2xl font-serif">
+            <Link to="/" className="text-2xl font-serif">
               Vasudha Krishnamoorthy
-            </a>
+            </Link>
           </div>
 
           <div className="flex space-x-6 mb-6 md:mb-0">
