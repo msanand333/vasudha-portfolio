@@ -1,11 +1,4 @@
 import { cn } from "@/lib/utils";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Youtube } from "lucide-react";
 
@@ -65,7 +58,7 @@ export default function DirectedWorksSection({
       className={cn("section-padding py-24 bg-secondary", className)}
     >
       <div className="container mx-auto">
-        <div className="flex flex-col items-center mb-12 gap-4 text-center ">
+        <div className="flex flex-col items-center mb-12 gap-4 text-center">
           <div className="reveal">
             <h2 className="text-3xl md:text-4xl mb-2 font-serif">
               Directed Works
@@ -88,58 +81,39 @@ export default function DirectedWorksSection({
           </Button>
         </div>
 
-        <div className="reveal relative">
-          <Carousel className="w-full">
-            <CarouselContent className="">
-              {directedWorks.map((work, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <div className="p-1">
-                    <div className="overflow-hidden rounded-sm bg-background">
-                      <div className="aspect-video relative">
-                        <img
-                          src={work.thumbnail}
-                          alt={work.title}
-                          className="object-cover w-full h-full"
-                        />
-                      </div>
-                      <div className="p-4">
-                        <div className="flex items-center justify-between mb-2">
-                          <h3 className="font-medium">{work.title}</h3>
-                          <span className="text-sm text-muted-foreground">
-                            {work.year}
-                          </span>
-                        </div>
-                        <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
-                          {work.description}
-                        </p>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          className="w-full"
-                          asChild
-                        >
-                          <a
-                            href={work.youtubeLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <ExternalLink className="mr-2 h-3 w-3" />
-                            Watch on YouTube
-                          </a>
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <div className="absolute -left-10 sm:-left-14 top-1/2 -translate-y-1/2">
-              <CarouselPrevious className="relative left-0" />
+        <div className="reveal grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {directedWorks.map((work, index) => (
+            <div key={index} className="bg-background rounded-sm overflow-hidden">
+              <div className="aspect-video relative">
+                <img
+                  src={work.thumbnail}
+                  alt={work.title}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <div className="p-4">
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="font-medium">{work.title}</h3>
+                  <span className="text-sm text-muted-foreground">
+                    {work.year}
+                  </span>
+                </div>
+                <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                  {work.description}
+                </p>
+                <Button variant="outline" size="sm" className="w-full" asChild>
+                  <a
+                    href={work.youtubeLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <ExternalLink className="mr-2 h-3 w-3" />
+                    Watch on YouTube
+                  </a>
+                </Button>
+              </div>
             </div>
-            <div className="absolute -right-10 sm:-right-14 top-1/2 -translate-y-1/2">
-              <CarouselNext className="relative right-0" />
-            </div>
-          </Carousel>
+          ))}
         </div>
       </div>
     </section>
